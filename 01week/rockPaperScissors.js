@@ -12,10 +12,39 @@ const rl = readline.createInterface({
 });
 
 // the function that will be called by the unit test below
+// func needs to return one of three strings tested for below
 const rockPaperScissors = (hand1, hand2) => {
+  let hand1
+  let hand2 = .toLowercase 
 
-  // Write code here
-  // Use the unit test to see what is expected
+  //a tie
+  if (hand1 === hand2) {
+    return "It's a tie!"
+  }
+  //hand1 rock
+  else if (hand1 === 'rock'){
+    if(hand2 === 'paper'){
+      return 'Hand two wins!'
+    } else if(hand2 === 'scissors') {
+      return 'Hand one wins!'
+    }
+  }
+
+  //hand1 paper
+  else if (hand1 === 'paper'){
+    if(hand2 === 'scissors'){
+      return 'Hand two wins!'
+    } else if(hand2 === 'rock') {
+      return 'Hand one wins!'
+    }
+  }
+
+  //hand1 scissors
+  else {
+    if (hand2 === 'rock'){
+      return 'Hand two wins!'
+    } else { return 'Hand one wins!'}
+  }
 
 }
 
