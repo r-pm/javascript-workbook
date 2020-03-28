@@ -14,8 +14,8 @@ const rl = readline.createInterface({
 // the function that will be called by the unit test below
 // func needs to return one of three strings tested for below
 const rockPaperScissors = (hand1, hand2) => {
-  let hand1
-  let hand2 = .toLowercase 
+  hand1 = hand1.toLowerCase().trim();
+  hand2 = hand2.toLowerCase().trim();
 
   //a tie
   if (hand1 === hand2) {
