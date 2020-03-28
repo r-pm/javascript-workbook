@@ -9,28 +9,41 @@
 // ***************************
 // Write a JavaScript program to display the current day and time, start with:
 const displayDate = () => {
-  const currentDate = new Date()
+  const currentDate = new Date();
 
   document.getElementById("display-date-time").innerHTML = currentDate;
 }
  
 
 // Write a JavaScript program to convert a number to a string.
+const numberInput = inputNumber;
 
+const numbToString = () => {
+  inputNumber.toString();
+
+  document.getElementById("display-numbToString").innerHTML = inputNumber;
+}
 
 
 // Write a JavaScript program to convert a string to the number.
+const stringInput;
 
+const stringToNumb = () => {
+  stringInput.Number();
+
+  document.getElementById("display-stringToNumb").innerHTML = stringInput;
+}
 
 
 // Write a JavaScript program that takes in different datatypes and prints out whether they are a:
-  // * Boolean
-  // * Null
-  // * Undefined
-  // * Number
-  // * NaN
-  // * String
-  
+const dataType; 
+document.getElementById("data-type-input").value = dataType;
+
+const displayDataType() = => {
+  return typeof dataType 
+console.log(works)
+  document.getElementById("display-type").innerHTML = dataType;
+}
 
   
 // Write a JavaScript program that adds 2 numbers together.

@@ -9,10 +9,17 @@
 
   <body>
     <h1>Hello World!</h1>
-    <button id="display-date-time" onclick="displayDate()">Show Me Date & Time</button>
-    <button id="display-numbToString">Turn this number type to a string</button>
-    <button id="display-stringToNumb">Turn this string type to number</button>
-    <button id="display-typeOf">What type of data is this?</button>
+    <button id="display-date-time" ondblclick="displayDate()">Show Me Date & Time</button>
+    <button id="display-numbToString" ondblclick="numbToString()">Turn this number type to a string
+      <input type=number id="numberInput">
+    </button>
+    <button id="display-stringToNumb">Turn this string type to number
+      <input type=text id="stringInput">
+    </button>
+
+    <input type="text" id="data-type-input">
+    <button id="display-type" onclick="displayDataType()">What type of data is this?</button>
+    
     <button id="display-add">Add!</button>
     <button id="display-twoTrue">Enter two true statements</button>
     <button id="display-oneTrue">Enter two statements, one must be true</button>

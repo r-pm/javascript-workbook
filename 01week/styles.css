@@ -12,3 +12,11 @@ button {
   margin-bottom: 20px;
   
 }
+
+input {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: solid blue 1px;
+}
