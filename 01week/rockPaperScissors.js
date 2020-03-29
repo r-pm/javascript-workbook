@@ -16,7 +16,7 @@ const rl = readline.createInterface({
 const rockPaperScissors = (hand1, hand2) => {
   hand1 = hand1.toLowerCase().trim();
   hand2 = hand2.toLowerCase().trim();
-
+//above converts each hand input to lowercase and then trims any excess white space on either side
   //a tie
   if (hand1 === hand2) {
     return "It's a tie!"
@@ -47,6 +47,7 @@ const rockPaperScissors = (hand1, hand2) => {
   }
 
 }
+
 
 // the first function called in the program to get an input from the user
 // to run the function use the command: node main.js
