@@ -47,10 +47,38 @@ console.log(works)
 
   
 // Write a JavaScript program that adds 2 numbers together.
+//for this attempt i used the resource below
+const input1 = document.getElementById("sumInputOne").value
+const input2 = document.getElementById("sumInputTwo").value
 
+const sumTwo() = => {
+  const sumTotal = input1 + input2
+}
+//code above creates variables from inputs & simple addition function that will use them
+//should return sumTotal to variable declared below
+const sumTotal = document.createElement("p");
+
+const sumDisplay = document.getElementById("display-sum");
+sumDisplay.appendChild(sumTotal)
+//all code above creates a new p within the #display-sum <button/> 
+//that will display the sum created by inputs 
 
 
 // Write a JavaScript program that runs only when 2 things are true.
+//for this attempt I started building the function & built my way out
+//last thing built was html element
+true1 = document.getElementById("").value;
+true2 = document.getElementById("").value;
+
+const doIfTrue() = => {
+  if true1 < 0 
+  if true2 > 0
+
+  document.getElementById("display-twoTrue").innerHTML = return true2 - true1;
+
+}
+
+
 
 
 
@@ -58,7 +86,19 @@ console.log(works)
 
 
 
-// Write a JavaScript program that runs when both things are not true.  
+// Write a JavaScript program that runs when both things are not true. 
+fals1 = document.getElementById("falseInput1").value;
+fals2 = document.getElementById("falseInput2").value;
+const doIfFlase() = => {
+  !if fals1 > 0 
+  !if fals2 < 0
+
+  return fals2 - fals1
+
+}
+
+
+
 
 // ***************************
 //         PART TWO
