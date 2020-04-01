@@ -18,10 +18,10 @@ const displayDate = () => {
 // Write a JavaScript program to convert a number to a string.
 const numberInput = inputNumber;
 
-const numbToString = () => {
+const displayString = () => {
   inputNumber.toString();
 
-  document.getElementById("display-numbToString").innerHTML = inputNumber;
+  document.getElementById("display-to-string").innerHTML = inputNumber;
 }
 
 
@@ -31,7 +31,7 @@ const stringInput;
 const stringToNumb = () => {
   stringInput.Number();
 
-  document.getElementById("display-stringToNumb").innerHTML = stringInput;
+  document.getElementById("display-to-numb").innerHTML = stringInput;
 }
 
 
@@ -48,8 +48,8 @@ console.log(works)
   
 // Write a JavaScript program that adds 2 numbers together.
 //for this attempt i used the resource below
-const input1 = document.getElementById("sumInputOne").value
-const input2 = document.getElementById("sumInputTwo").value
+const input1 = document.getElementById("sum-input-1").value
+const input2 = document.getElementById("sum-input-2").value
 
 const sumTwo() = => {
   const sumTotal = input1 + input2
@@ -67,28 +67,37 @@ sumDisplay.appendChild(sumTotal)
 // Write a JavaScript program that runs only when 2 things are true.
 //for this attempt I started building the function & built my way out
 //last thing built was html element
-true1 = document.getElementById("").value;
-true2 = document.getElementById("").value;
+true1 = document.getElementById("true-input-1").value;
+true2 = document.getElementById("true-input-2").value;
 
-const doIfTrue() = => {
+const doIfOnlyTrue() = => {
   if true1 < 0 
   if true2 > 0
 
-  document.getElementById("display-twoTrue").innerHTML = return true2 - true1;
+  document.getElementById("display-only-true").innerHTML = return true2 - true1;
 
 }
 
 
 
-
-
 // Write a JavaScript program that runs when 1 of 2 things are true.
+true1 = document.getElementById("ambiv-input-1").value;
+true2 = document.getElementById("ambiv-input-2").value;
 
+const doIfHalfTrue() = => {
+  if true1 < 0;
+  if true2 < 0; {
+    document.getElementById("display-only-true").innerHTML = return true2 - true1;
+
+  }
+
+
+}
 
 
 // Write a JavaScript program that runs when both things are not true. 
-fals1 = document.getElementById("falseInput1").value;
-fals2 = document.getElementById("falseInput2").value;
+fals1 = document.getElementById("false-input-1").value;
+fals2 = document.getElementById("false-input-2").value;
 const doIfFlase() = => {
   !if fals1 > 0 
   !if fals2 < 0
