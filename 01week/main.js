@@ -2,7 +2,7 @@
 
 // **THIS IS INCREDIBLY IMPORTANT THAT YOU DO BOTH SECTIONS!!! 
 //You will be doing only front-end work in 421 and you need to brush up on your HTML elements**
-
+console.log("is this shit working?")
 
 // ***************************
 //          PART ONE
