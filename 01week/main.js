@@ -10,56 +10,53 @@ console.log("is this shit working?")
 // Write a JavaScript program to display the current day and time, start with:
 const displayDate = () => {
   const currentDate = new Date();
-
+  console.log("is this shit working?")
   document.getElementById("display-date-time").innerHTML = currentDate;
 }
  
 
 // Write a JavaScript program to convert a number to a string.
-const numberInput = inputNumber;
+let numberInput;
 
 const displayString = () => {
-  inputNumber.toString();
-
-  document.getElementById("display-to-string").innerHTML = inputNumber;
+  numberInput = document.getElementById("numberInput").value
+  numberInput.toString();
+  document.getElementById("display-to-string").innerHTML = numberInput;
 }
 
 
 // Write a JavaScript program to convert a string to the number.
-const stringInput;
+var stringInput;
 
 const stringToNumb = () => {
-  stringInput.Number();
+  // stringInput.Number();
 
-  document.getElementById("display-to-numb").innerHTML = stringInput;
+  document.getElementById("display-to-numb").innerHTML = Number(stringInput);
 }
 
 
 // Write a JavaScript program that takes in different datatypes and prints out whether they are a:
-const dataType; 
-document.getElementById("data-type-input").value = dataType;
 
-const displayDataType() = => {
-  return typeof dataType 
-console.log(works)
+const displayDataType = () => {
+  let inputHolder = document.getElementById("data-type-input").value
+  let dataType = typeof inputHolder
   document.getElementById("display-type").innerHTML = dataType;
 }
 
   
 // Write a JavaScript program that adds 2 numbers together.
 //for this attempt i used the resource below
-const input1 = document.getElementById("sum-input-1").value
-const input2 = document.getElementById("sum-input-2").value
 
-const sumTwo() = => {
-  const sumTotal = input1 + input2
+const sumTwo = () => {
+  let input1 = document.getElementById("sum-input-1").value;
+  let input2 = document.getElementById("sum-input-2").value;
+  let sumTotal = input1 + input2;
+  document.getElementById("display-sum").innerHTML = sumTotal;
+ 
 }
 //code above creates variables from inputs & simple addition function that will use them
 //should return sumTotal to variable declared below
-const sumTotal = document.createElement("p");
 
-const sumDisplay = document.getElementById("display-sum");
-sumDisplay.appendChild(sumTotal)
 //all code above creates a new p within the #display-sum <button/> 
 //that will display the sum created by inputs 
 
@@ -67,42 +64,40 @@ sumDisplay.appendChild(sumTotal)
 // Write a JavaScript program that runs only when 2 things are true.
 //for this attempt I started building the function & built my way out
 //last thing built was html element
-true1 = document.getElementById("true-input-1").value;
-true2 = document.getElementById("true-input-2").value;
 
-const doIfOnlyTrue() = => {
-  if true1 < 0 
-  if true2 > 0
-
-  document.getElementById("display-only-true").innerHTML = return true2 - true1;
+const doIfOnlyTrue = () => {
+  let true1 = document.getElementById("true-input-1").value;
+  let true2 = document.getElementById("true-input-2").value;  
+  if (true1 < 0 && true2 > 0){
+    document.getElementById("display-only-true").innerHTML = true2 - true1;
+  }
 
 }
 
 
 
 // Write a JavaScript program that runs when 1 of 2 things are true.
-true1 = document.getElementById("ambiv-input-1").value;
-true2 = document.getElementById("ambiv-input-2").value;
 
-const doIfHalfTrue() = => {
-  if true1 < 0;
-  if true2 < 0; {
-    document.getElementById("display-only-true").innerHTML = return true2 - true1;
+const doIfHalfTrue = () => {
+  let true1 = document.getElementById("ambiv-input-1").value;
+  let true2 = document.getElementById("ambiv-input-2").value;
+  if (true1 < 0 || true2 < 0) {
+    document.getElementById("display-only-true").innerHTML = true2 - true1;
 
   }
-
 
 }
 
 
 // Write a JavaScript program that runs when both things are not true. 
-fals1 = document.getElementById("false-input-1").value;
-fals2 = document.getElementById("false-input-2").value;
-const doIfFlase() = => {
-  !if fals1 > 0 
-  !if fals2 < 0
 
-  return fals2 - fals1
+const doIfFalse = () => {
+  let fals1 = document.getElementById("false-input-1").value;
+  let fals2 = document.getElementById("false-input-2").value;
+  if (!(fals1 > 0) && !(fals2 < 0)) {
+    document.getElementById("display-false").innerHTML = fals2 - fals1
+
+  }
 
 }
 

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title></title>
     <link rel="stylesheet" href="styles.css">
-    <script src="main.js" defer></script>
+    <script src="main.js"></script>
   </head>
 
   <body>
@@ -16,8 +16,8 @@
 
     <!-- solution 2: number to string  -->
     <!-- first attempt, thought maybe put input inside button to have function run & return same place -->
+    <input type="number" id="numberInput">
     <button id="display-to-string" onclick="displayString()">Turn this number type to a string
-      <input type="number" id="numberInput">
     </button>
 
     <!-- solution 3: string to number -->
@@ -39,17 +39,17 @@
     <!-- solution 6: do if both true -->
     <input type="number" id="true-input-1">Enter negative interger
     <input type="number" id="true-input-2">Enter positive interger
-    <button id="display-only-true" onclick="doIfOnlyTrue()">Result!</button>
+    <button id="display-only-true" onclick="doIfOnlyTrue()">Do exactly as I say for a Result!</button>
 
     <!-- solution 7: do if half true -->
     <input type="text" id="ambiv-input-1">Enter negative interger
     <input type="text" id="ambiv-input-2">Enter positive interger
-    <button id="display-half-true" onclick="doIfHalfTrue()">Result!</button>
+    <button id="display-half-true" onclick="doIfHalfTrue()">Do the at least half of what I say for a Result!</button>
     
     <!-- solution 8: do if false -->
     <input type="number" id="false-input-1">Enter positive interger
     <input type="number" id="false-input-2">Enter negative interger
-    <button id="display-false" onclick="doIfFalse()">Result!</button>
+    <button id="display-false" onclick="doIfFalse()">Do the opposite of what I say for a Result!</button>
   </body>
 
 </html>
