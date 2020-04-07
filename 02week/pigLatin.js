@@ -32,7 +32,6 @@ const pigLatin = (word)  => {
 }
 
 
-
 const getPrompt = () => {
   rl.question('word ', (answer) => {
     console.log( pigLatin(answer) );
