@@ -9,20 +9,28 @@ const rl = readline.createInterface({
 
 
 const pigLatin = (word)  => {
+  word = word.toLowerCase().trim();
+  const vowel = ["a", "e", "i", "o", "u"];
+  let vowelIndex = 0;
 
-//if already starts with vowel = add yay
-//else if
-//restart with vowel 
-  //at first vowel - find vowel : .includes() / indoexof()& spits out in position not -1, 0 or >0
-  //split in half (before & after vowel) - .slice or .substring 
-  //1st half always starts at 0 & goes to firstVowel, 2nd half starts at firstVowel and goes to end/-1
-  //place vowel half before original first half - 
-  //add ay at end
-//(y is a vowel if midword, not a vowel at extremes)  
-//else
-//???
-
+  if (vowel.includes(word[0])) {
+    // If first letter is a vowel
+    return word + "yay";
+  } 
+  else {
+    for (let char of word) {
+      // Loop through until the first vowel is found
+      if (vowel.includes(char)) {
+        // Store the index at which the first vowel exists
+        vowelIndex = word.indexOf(char);
+        break;
+      }
+    }
+    // Compose final string
+    return word.slice(vowelIndex) + word.slice(0, vowelIndex) + "ay";
+  }
 }
+
 
 
 const getPrompt = () => {
