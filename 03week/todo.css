@@ -1,0 +1,15 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: lightslategray;
+
+}
+
+button {
+  background-color: lightseagreen;
+}
+
+#done {
+  text-decoration:line-through bold black;
+}
