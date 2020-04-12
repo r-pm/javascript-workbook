@@ -24,19 +24,69 @@ function printBoard() {
 }
 
 function horizontalWin() {
-  // Your code here
+  for(i = 0; i < 3; i++) {
+    if (i === ['X', 'X', 'X'] || ['O','O','O']) {
+        return true;
+    } 
+}
+//written out as if 
+//  if ([0] === ['X', 'X', 'X'] || ['O','O','O']) {
+//    return "Winner!"
+//  }
+ // else if ([1] === ['X', 'X', 'X'] || ['O','O','O']) {
+//    return "Winner!"
+//  }
+  //else if ([2] === ['X', 'X', 'X'] || ['O','O','O']) {
+    //return "Winner!"
+ // }
 }
 
 function verticalWin() {
-  // Your code here
+  for([i][0] = 0; i < 3 ; i++) {
+    if ([i][0] === 'X'){
+      return true;
+    } else if ([i][0] === 'O'){
+      return true;
+    }
 }
 
+for([i][1] = 0; i < 3 ; i++) {
+  if ([i][1] === 'X'){
+    return true;
+  } else if ([i][1] === 'O'){
+    return true;
+  }
+}
+
+for([i][2] = 0; i < 3 ; i++) {
+  if ([i][2] === 'X'){
+    return true;
+  } else if ([i][2] === 'O'){
+    return true;
+  }
+
 function diagonalWin() {
-  // Your code here
+  if ([2][0] && [1][1] && [0][2] === 'X') {
+    return true;
+  }
+  else if ([2][0] && [1][1] && [0][2] === '0') {
+    return true;
+  }
+
+  for([i][i] = 0; i < 3; i++) {
+    if([i][i] === ['X']) {
+        return true;
+    } 
+    else if ([i][i] === ['O']) {
+       return true;
+    }
 }
 
 function checkForWin() {
-  // Your code here
+  if ( diagonalWin() || verticallWin() || horizontalWin() === True) {
+    return true; 
+    return "Winner!";
+  } 
 }
 
 function ticTacToe(row, column) {
