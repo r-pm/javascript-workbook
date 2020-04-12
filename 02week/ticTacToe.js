@@ -12,6 +12,14 @@ let board = [
   [' ', ' ', ' ']
 ];
 
+function resetBoard(board){
+  let board = [
+    [' ', ' ', ' '],
+    [' ', ' ', ' '],
+    [' ', ' ', ' ']
+  ];
+}
+
 let playerTurn = 'X';
 
 function printBoard() {
@@ -24,11 +32,11 @@ function printBoard() {
 }
 
 function horizontalWin() {
-  for(i = 0; i < 3; i++) {
-    if (i === ['X', 'X', 'X'] || ['O','O','O']) {
+  for(board[i] = 0; i < 3; i++) {
+    if (board[i] === ['X', 'X', 'X'] || ['O','O','O']) {
         return true;
     } 
-}
+  }
 //written out as if 
 //  if ([0] === ['X', 'X', 'X'] || ['O','O','O']) {
 //    return "Winner!"
@@ -42,29 +50,29 @@ function horizontalWin() {
 }
 
 function verticalWin() {
-  for([i][0] = 0; i < 3 ; i++) {
-    if ([i][0] === 'X'){
+  for(board[i][0] = 0; i < 3 ; i++) {
+    if (board[i][0] === 'X'){
       return true;
-    } else if ([i][0] === 'O'){
+    } else if (board[i][0] === 'O'){
       return true;
     }
-}
-
-for([i][1] = 0; i < 3 ; i++) {
-  if ([i][1] === 'X'){
-    return true;
-  } else if ([i][1] === 'O'){
-    return true;
-  }
-}
-
-for([i][2] = 0; i < 3 ; i++) {
-  if ([i][2] === 'X'){
-    return true;
-  } else if ([i][2] === 'O'){
-    return true;
   }
 
+  for(board[i][1] = 0; i < 3 ; i++) {
+    if (board[i][1] === 'X'){
+      return true;
+    } else if (board[i][1] === 'O'){
+      return true;
+    }
+  }
+
+  for(board[i][2] = 0; i < 3 ; i++) {
+    if (board[i][2] === 'X'){
+      return true;
+    } else if (board[i][2] === 'O'){
+      return true;
+    }
+  }
 function diagonalWin() {
   if ([2][0] && [1][1] && [0][2] === 'X') {
     return true;
@@ -80,20 +88,26 @@ function diagonalWin() {
     else if ([i][i] === ['O']) {
        return true;
     }
+  }
 }
 
 function checkForWin() {
-  if ( diagonalWin() || verticallWin() || horizontalWin() === True) {
+  if ( diagonalWin() || verticallWin() || horizontalWin() == true) {
     return true; 
-    return "Winner!";
   } 
 }
 
 function ticTacToe(row, column) {
-  // Your code here
-}
+  handleClick() = => {
+    document.getElementById('this').innerHTML = playerTurn
+    this.onclick = null;
+    //turned off onclick function for used [] 
+  }
 
-function getPrompt() {
+
+  
+}
+/*function getPrompt() {
   printBoard();
   console.log("It's Player " + playerTurn + "'s turn.");
   rl.question('row: ', (row) => {
@@ -102,6 +116,11 @@ function getPrompt() {
       getPrompt();
     });
   });
+*/
+  
+if (playerTurn == 'X') {
+  let playerTurn == 'O'
+}
 
 }
 
