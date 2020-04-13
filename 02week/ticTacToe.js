@@ -12,14 +12,6 @@ let board = [
   [' ', ' ', ' ']
 ];
 
-function resetBoard(board){
-  let board = [
-    [' ', ' ', ' '],
-    [' ', ' ', ' '],
-    [' ', ' ', ' ']
-  ];
-}
-
 let playerTurn = 'X';
 
 function printBoard() {
@@ -30,6 +22,8 @@ function printBoard() {
   console.log('  ---------');
   console.log('2 ' + board[2].join(' | '));
 }
+
+//my code below
 
 function horizontalWin() {
   for(board[i] = 0; i < 3; i++) {
@@ -73,6 +67,7 @@ function verticalWin() {
       return true;
     }
   }
+
 function diagonalWin() {
   if ([2][0] && [1][1] && [0][2] === 'X') {
     return true;
@@ -97,17 +92,26 @@ function checkForWin() {
   } 
 }
 
+
+/*const handleClick = (element) => {
+let coords = coordinates received from click
+  console.log(document.getElementById('this'))
+  document.getElementById('this').innerHTML = playerTurn
+  this.onclick = null;
+  //places player mark on clicked []
+  //turned off onclick function for used []
+ // let cords = document.getElementById(this).split 
+}*/
+
 function ticTacToe(row, column) {
-  handleClick() = => {
-    document.getElementById('this').innerHTML = playerTurn
-    this.onclick = null;
-    //turned off onclick function for used [] 
+  //call board [row][col] = playerTurn
+  //call checkWin
+  if (playerTurn == 'X') {
+    playerTurn = 'O'
   }
-
-
-  
 }
-/*function getPrompt() {
+
+function getPrompt() {
   printBoard();
   console.log("It's Player " + playerTurn + "'s turn.");
   rl.question('row: ', (row) => {
@@ -116,15 +120,17 @@ function ticTacToe(row, column) {
       getPrompt();
     });
   });
-*/
   
-if (playerTurn == 'X') {
-  let playerTurn == 'O'
-}
 
 }
 
-
+/*function resetBoard(board){
+  board = [
+    [' ', ' ', ' '],
+    [' ', ' ', ' '],
+    [' ', ' ', ' ']
+  ];
+}*/
 
 // Tests
 
@@ -158,5 +164,4 @@ if (typeof describe === 'function') {
 } else {
 
   getPrompt();
-
 }
