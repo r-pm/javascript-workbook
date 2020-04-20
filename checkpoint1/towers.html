@@ -12,9 +12,9 @@
       To Win: You must place all pieces in the same order (largest at the bottom) on the rightmost tower.
     </div>
     <div id="towers">
-      <ul class="tower" id="towerA" onclick="play(this)"></ul>
-      <ul class="tower" id="towerB" ></ul>
-      <ul class="tower" id="towerC" ></ul>
+      <ul class="tower" id="towerA" onclick="movePiece(this)" ondblclick="assignEnd(this)"></ul>
+      <ul class="tower" id="towerB" onclick="movePiece(this)" ondblclick="assignEnd(this)"></ul>
+      <ul class="tower" id="towerC" onclick="movePiece(this)" ondblclick="assignEnd(this)"></ul>
     </div>
     <button id="text" class="restart">Restart</button>
   </div>

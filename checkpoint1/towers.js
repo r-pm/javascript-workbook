@@ -20,19 +20,31 @@ const printStacks = () => {
   console.log("c: " + stacks.c);
 }
 
-let start = stacks.a; //tower we start moving from  
-let end = stacks.c; //tower we end moving to 
-let nDisks = stacks[element].length 
+//my code//
+let start = stacks.a; //tower we start moving from, also stack clicked  
+let end = stacks.c;  
+let nDisks = stacks[whichever clicked].length 
 // nDisk should count total number of discs [#,#,#] in the stack selected?/being worked with 
 
+//triggered by double click on desired destination
+//can i define a var through this and have that var called in seperate function?
+//alt, can i nest this function inside other function & still have it respond to ondblclick?
+function assignEnd(this){
+  let end = this;
+}
+
 const movePiece = (nDisks, start, end) => {
+  let start = this;
+  let nDisks = this.length; 
   let movingDisk = start.pop([nDisks-1]); //pop last (nDisks-1) value of the start tower
   let destination = end.pop([nDisks-1]); //pop the last value of the end tower
  //what if it's empty tho?
   if (movingDisk < destination) {
   end.push(movingDisk);
 }
-  else { print = "invalid move"} //connect this to an html elem
+  else { print = "invalid move"}; //connect this to id "text"
+
+  checkForWin(end);
 }
 
 const isLegal = (start, end) => {
