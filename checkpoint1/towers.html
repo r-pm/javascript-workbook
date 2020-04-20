@@ -4,6 +4,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Towers of Hanoi!</title>
   <link rel="stylesheet" href="towers.css">
+  <script src="towers.js" type="text/javascript"></script>  
+
 </head>
 
 <body>
@@ -11,14 +13,14 @@
     <div id="text">Welcome!<br><br> To play: click on a piece, click on the tower you want to move it to. <br><br>
       To Win: You must place all pieces in the same order (largest at the bottom) on the rightmost tower.
     </div>
+    <div id="invalid">Invalid move!</div>
     <div id="towers">
-      <ul class="tower" id="towerA" onclick="movePiece(this)" ondblclick="assignEnd(this)"></ul>
-      <ul class="tower" id="towerB" onclick="movePiece(this)" ondblclick="assignEnd(this)"></ul>
-      <ul class="tower" id="towerC" onclick="movePiece(this)" ondblclick="assignEnd(this)"></ul>
+      <ul class="tower" id="a" onclick="assignStart(this)" ondblclick="assignEnd(this)"></ul>
+      <ul class="tower" id="b" onclick="assignStart(this)" ondblclick="assignEnd(this)"></ul>
+      <ul class="tower" id="c" onclick="assignStart(this)" ondblclick="assignEnd(this)"></ul>
     </div>
     <button id="text" class="restart">Restart</button>
   </div>
-<script src="towers.js" type="text/javascript"></script>  
 </body>
 
 </html>

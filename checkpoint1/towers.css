@@ -108,3 +108,7 @@ body {
   background-color: firebrick;
   clip-path: circle(11%);
 }
+
+#invalid {
+  display: none;
+}

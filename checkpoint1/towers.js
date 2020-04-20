@@ -7,12 +7,19 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-let stacks = {   ///need to connect to html stacks
+let stacks = {   
   a: [3, 2, 1],  
   b: [],
   c: [],
 };
 
+document.addEventListener('DOMContentLoaded', function()) {
+let start = stacks.a; //tower we start moving from, changes to any stack clicked  
+let end = stacks.c; ////tower we start moving from, changes to any stack dblclicked   
+let startDisks = stacks[a].length//should count number of discs on whatever stack selected 
+let endDisks = stacks[c].length
+console.log(start)
+}
 
 const printStacks = () => {
   console.log("a: " + stacks.a);
@@ -20,29 +27,32 @@ const printStacks = () => {
   console.log("c: " + stacks.c);
 }
 
-//my code//
-let start = stacks.a; //tower we start moving from, also stack clicked  
-let end = stacks.c;  
-let nDisks = stacks[element].length 
-// nDisk should count total number of discs [#,#,#] in the stack selected?/being worked with 
 
 //triggered by double click on desired destination
 //can i define a var through this and have that var called in seperate function?
 //alt, can i nest this function inside other function & still have it respond to ondblclick?
-function assignEnd(){
- end = this;
+function assignEnd(element){
+ end = element.id;
+ endDisks = stacks[end];
+ movePiece();
 }
 
-const movePiece = (nDisks, start, end) => {
-   start = this;
-   nDisks = this.length; 
-  let movingDisk = start.pop([nDisks-1]); //pop last (nDisks-1) value of the start tower
-  let destination = end.pop([nDisks-1]); //pop the last value of the end tower
+function assignStart(element){
+  console.log('hit assign start')
+  start = element.id;
+  startDisks = stacks[start];
+ }
+
+const movePiece = () => {
+  let movingDisk = startDisks[startDisks.length-1]; 
+  let destination = endDisks[endDisks.length-1] 
  //what if it's empty tho?
   if (movingDisk < destination) {
-  end.push(movingDisk);
+  stacks[end].push(movingDisk);
+  stacks[start].pop();
+  console.log(stacks , 'move this :')
 }
-  else { print = "invalid move"}; //connect this to id "text"
+  else { document.getElementById("text").style.display = flex}; //connect this to id "text"
 
   checkForWin(end);
 }
