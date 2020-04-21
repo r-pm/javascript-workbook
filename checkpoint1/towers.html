@@ -4,8 +4,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Towers of Hanoi!</title>
   <link rel="stylesheet" href="towers.css">
-  <script src="towers.js" type="text/javascript"></script>  
-
 </head>
 
 <body>
@@ -15,16 +13,17 @@
     </div>
     <div class="text" id="invalid">Invalid move!</div>
     <div id="towers">
-      <ul class="tower" id="a" onclick="assignStart(this)" ondblclick="assignEnd(this)">
+      <ul class="tower" id="a">
         <li class="disc" id="disc-3"></li>
         <li class="disc" id="disc-2"></li>
         <li class="disc" id="disc-1"></li>
       </ul>
-      <ul class="tower" id="b" onclick="assignStart(this)" ondblclick="assignEnd(this)"></ul>
-      <ul class="tower" id="c" onclick="assignStart(this)" ondblclick="assignEnd(this)"></ul>
+      <ul class="tower" id="b"></ul>
+      <ul class="tower" id="c"></ul>
     </div>
     <button class="text" id="restart">Restart</button>
   </div>
 </body>
+<script src="towers.js"></script>  
 
 </html>

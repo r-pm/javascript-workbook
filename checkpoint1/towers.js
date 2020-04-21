@@ -28,13 +28,13 @@ let endDisks = stacks.c.length
 //triggered by double click on desired destination
 //can i define a var through this and have that var called in seperate function?
 //alt, can i nest this function inside other function & still have it respond to ondblclick?
-function assignEnd(element){
+const assignEnd = (element) => {//add event listener instead
  end = element.id;
  endDisks = stacks[end];
  movePiece(start,end);
 }
 
-function assignStart(element){
+const assignStart = (element) => {
   start = element.id;
   startDisks = stacks[start];
  }
@@ -81,13 +81,18 @@ if (typeof describe === 'function') {
 
  /* describe('movePiece()', () => {
     it('should do...', () => {
-      assert.equal(function('test pass in'), 'result i expect');
+      assert.equal(name of function('test pass in'), 'result i expect');
     });
   });*/
 
   describe('checkForWin()', () => {
     it('should check for win after every move', () => {
-      assert.equal(function (stacks.c === [3, 2, 1]), 'return true');
+      stacks = {   
+        a: [],  
+        b: [],
+        c: [3, 2, 1],
+      };
+      assert.equal(checkForWin(), true);
     });
   });
 
