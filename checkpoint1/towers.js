@@ -7,19 +7,12 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-let stacks = {   
+
+let stacks = {   //can connect stacks.[] to html?
   a: [3, 2, 1],  
   b: [],
   c: [],
 };
-
-document.addEventListener('DOMContentLoaded', function()) {
-let start = stacks.a; //tower we start moving from, changes to any stack clicked  
-let end = stacks.c; ////tower we start moving from, changes to any stack dblclicked   
-let startDisks = stacks[a].length//should count number of discs on whatever stack selected 
-let endDisks = stacks[c].length
-console.log(start)
-}
 
 const printStacks = () => {
   console.log("a: " + stacks.a);
@@ -27,6 +20,10 @@ const printStacks = () => {
   console.log("c: " + stacks.c);
 }
 
+let start = stacks.a; //tower we start moving from, changes to any stack clicked  
+let end = stacks.c; ////tower we start moving from, changes to any stack dblclicked   
+let startDisks = stacks.a.length//should count number of discs on whatever stack selected 
+let endDisks = stacks.c.length
 
 //triggered by double click on desired destination
 //can i define a var through this and have that var called in seperate function?
@@ -34,7 +31,7 @@ const printStacks = () => {
 function assignEnd(element){
  end = element.id;
  endDisks = stacks[end];
- movePiece();
+ movePiece(start,end);
 }
 
 function assignStart(element){
@@ -50,7 +47,7 @@ const movePiece = () => {
   stacks[end].push(movingDisk);
   stacks[start].pop();
 }
-  else {document.getElementById("text").style.display = flex}; 
+  else {document.getElementById("invalid").style.display = "block"}; 
 
   checkForWin(end);//should this be stacks.c instead OR NOTHING?
 }
@@ -66,36 +63,37 @@ const checkForWin = () => {
     print = "Finished!";
     return true;
   }
-//...this one seems easy enough
 }
 
-/*
-const play = (nDisks, start , via, end) => {
 
-  if (nDisks == 1) {
-
-  }
-
-ELSE
-play(nDisks - 1, start, end, via) // 1 to c , 
-move disk from start to end // Step 2
-play(disk - 1, via, start, end) // 2 to b 
-UNTIL
-IF nDisks is equal 1, THEN
-move disk from start to end
-
-}
-*/
 const getPrompt = () => {
   printStacks();
   rl.question('start stack: ', (start) => {
     rl.question('end stack: ', (end) => {
-      playTowers(start, end);
+      movePiece(start, end);
       getPrompt();
     });
   });
 }
 
-getPrompt();
 
+if (typeof describe === 'function') {
+
+ /* describe('movePiece()', () => {
+    it('should do...', () => {
+      assert.equal(function('test pass in'), 'result i expect');
+    });
+  });*/
+
+  describe('checkForWin()', () => {
+    it('should check for win after every move', () => {
+      assert.equal(function (stacks.c === [3, 2, 1]), 'return true');
+    });
+  });
+
+} else {
+
+  getPrompt();
+
+}
 ///TESTS
