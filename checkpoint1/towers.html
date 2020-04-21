@@ -10,16 +10,20 @@
 
 <body>
   <div class="container">
-    <div id="text">Welcome!<br><br> To play: click on a piece, click on the tower you want to move it to. <br><br>
+    <div class="text" id="message">Welcome!<br><br> To play: click on a piece, click on the tower you want to move it to. <br><br>
       To Win: You must place all pieces in the same order (largest at the bottom) on the rightmost tower.
     </div>
-    <div id="invalid">Invalid move!</div>
+    <div class="text" id="invalid">Invalid move!</div>
     <div id="towers">
-      <ul class="tower" id="a" onclick="assignStart(this)" ondblclick="assignEnd(this)"></ul>
+      <ul class="tower" id="a" onclick="assignStart(this)" ondblclick="assignEnd(this)">
+        <li class="disc" id="disc-3"></li>
+        <li class="disc" id="disc-2"></li>
+        <li class="disc" id="disc-1"></li>
+      </ul>
       <ul class="tower" id="b" onclick="assignStart(this)" ondblclick="assignEnd(this)"></ul>
       <ul class="tower" id="c" onclick="assignStart(this)" ondblclick="assignEnd(this)"></ul>
     </div>
-    <button id="text" class="restart">Restart</button>
+    <button class="text" id="restart">Restart</button>
   </div>
 </body>
 

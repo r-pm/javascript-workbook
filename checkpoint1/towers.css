@@ -16,7 +16,7 @@ body {
   transform: translateY(-50%);
 }
 
-#text {
+.text {
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -104,7 +104,7 @@ body {
 }
 
 
-.restart {
+#restart {
   background-color: firebrick;
   clip-path: circle(11%);
 }

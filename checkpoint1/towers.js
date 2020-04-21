@@ -38,7 +38,6 @@ function assignEnd(element){
 }
 
 function assignStart(element){
-  console.log('hit assign start')
   start = element.id;
   startDisks = stacks[start];
  }
@@ -50,17 +49,17 @@ const movePiece = () => {
   if (movingDisk < destination) {
   stacks[end].push(movingDisk);
   stacks[start].pop();
-  console.log(stacks , 'move this :')
 }
-  else { document.getElementById("text").style.display = flex}; //connect this to id "text"
+  else {document.getElementById("text").style.display = flex}; 
 
-  checkForWin(end);
+  checkForWin(end);//should this be stacks.c instead OR NOTHING?
 }
 
+/*
 const isLegal = (start, end) => {
-  //if number want to move smaller than last number of stack you want to move to 
-  // 
+ DID THIS INSIDE MOVE
 }
+*/
 
 const checkForWin = () => {
   if ( stacks.c === [3, 2, 1]){
