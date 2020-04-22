@@ -25,13 +25,19 @@ function movePiece() {
 }
 
 function isLegal() {
-  // Your code here
-
+if(start.disc < end.disc){
+  current.end.push(start.disc)
+  current.start.pop(start.disc)
+} else{ 
+  console.log('invalid, did nothing')  
+}
 }
 
 function checkForWin() {
-  // Your code here
-
+  if ( stacks.c === [3, 2, 1]){
+    print = "Finished!";
+    return true;
+  }
 }
 
 function towersOfHanoi(startStack, endStack) {

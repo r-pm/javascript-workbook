@@ -35,7 +35,7 @@ body {
   letter-spacing: 2px;
 }
 
-#towers {
+.towers {
   width: 67vw;
   height: 200px;
   display: flex;
@@ -44,7 +44,7 @@ body {
   padding: 20px;
   margin: 20px auto;
 }
-#towers ul {
+.towers {
   box-sizing: content-box;
   position: relative;
   display: flex;
@@ -60,7 +60,7 @@ body {
   list-style: none;
   transition: opacity .1s ease-in-out;
 }
-#towers ul:before {
+.towers ul:before {
   content: '';
   background-color: saddlebrown;
   position: absolute;
@@ -71,35 +71,35 @@ body {
   border-top-left-radius: 10px;
   z-index: 9;
 }
-#towers ul.clickable {
+.towers ul.clickable {
   cursor: pointer;
 }
-#towers li {
+.disk {
   display: block;
   z-index: 19;
   height: 20px;
   border-radius: 10px;
   background-color: white;
 }
-#towers li[id="disc-1"] {
+#disk-1 {
   width: 60px;
 }
-#towers li[id="disc-2"] {
+#disk-2 {
   width: 70px;
 }
-#towers li[id="disc-3"] {
+#disk-3 {
   width: 80px;
 }
-#towers li[id="disc-4"] {
+#towers li[id="disk-4"] {
   width: 90px;
 }
-#towers li[id="disc-5"] {
+#towers li[id="disk-5"] {
   width: 100px;
 }
-#towers li[id="disc-6"] {
+#disk-6 {
   width: 110px;
 }
-#towers li[id="disc-7"] {
+#disk-7 {
   width: 120px;
 }
 
