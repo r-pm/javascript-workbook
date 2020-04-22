@@ -13,36 +13,60 @@ let stacks = {
   c: []
 };
 
+let startStack = stacks.a;
+let endStack = stacks.c;
+let startDisc = startStack[startStack.length-1];
+let endDisc = endStack[endStack.length-1];
+
 function printStacks() {
   console.log("a: " + stacks.a);
   console.log("b: " + stacks.b);
   console.log("c: " + stacks.c);
 }
 
-function movePiece() {
-  // Your code here
-
+function movePiece(startStack,endStack) {
+ endStack.push(startDisc);
+ startStack.pop()
 }
 
-function isLegal() {
-if(start.disc < end.disc){
-  current.end.push(start.disc)
-  current.start.pop(start.disc)
-} else{ 
-  console.log('invalid, did nothing')  
-}
+
+function isLegal(startStack,endStack) {
+  if(startDisc < endDisc){
+    true;
+  } else{ 
+    false;
+    console.log('invalid, did nothing')  
+  }
 }
 
-function checkForWin() {
-  if ( stacks.c === [3, 2, 1]){
-    print = "Finished!";
+function checkForWin(startStack,endStack) {
+  if (stacks = {
+    a: [],
+    b: [4, 3, 2, 1],
+    c: []
+  }){
+    console.log('win!')
     return true;
+  }else if (stacks = {
+    a: [],
+    b: [],
+    c: [4, 3, 2, 1]
+  }){
+    console.log('win!')
+    return true;
+  }else {
+    return false; 
   }
 }
 
 function towersOfHanoi(startStack, endStack) {
-  // Your code here
-
+  if(isLegal == true){
+    movePiece();
+    checkForWin();
+  }else{
+    console.log('oops! invalid move')
+    getPrompt();
+  }
 }
 
 function getPrompt() {
