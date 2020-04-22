@@ -2,35 +2,36 @@
 
 window.onload = (event) => {
   console.log('window loaded');
-//something about how event handler on class name creates a pseudo array 
-//so if i wanted to add event handler to each element in array
-// Array.from(elements).forEach(function(element) {
-// element.addEventListener('click', myFunction);
-// });
 
-  function assignStart(element) {
-      //on single click, any #tower triggers the event assignStart 
-    start = document.getElementById(this)
-    element[this].addEventListener('click' , assignStart) ; 
+  let start = document.getElementsByClassName("tower");
+// start = [tower-0, tower-1, tower-2]
+
+  const assignStart = function(element) {
+    start = start[this];
+//how do i specify the li id for the ul tower element ?
     startLength = start.length;
-    
   };
 
+//on single click, any #tower triggers the event assignStart 
+  Array.from(start).forEach(function(element) {
+    element.addEventListener('click', assignStart);
+  });
+}
  
-  function assignEnd(element) {
-  end = element[this].addEventListener('double-click' , assignEnd) ; 
-  endLength = end.length;
-  movePiece(start,end);
-    //signals we should now try to move the piece 
-  };
+//   function assignEnd(element) {
+//   end = element[this].addEventListener('double-click' , assignEnd) ; 
+//   endLength = end.length;
+//   movePiece(start,end);
+//     //signals we should now try to move the piece 
+//   };
 
-};
+// };
 
 //compares the last disk of the start & end arrays 
 //if the moving disk from the start stack is smaller than the destination stack disk, the move is done
 //otherwise a previously hidden html element appears saying invalid
 //otherwise should include : moving to same spot, moving a larger disk on top
-const movePiece = () => {
+const movePiece = (start,end ) => {
   let movingDisk = startLength[startLength.length-1]; 
   let destination = endLength[endLength.length-1]; 
   if (movingDisk < destination) {
@@ -49,7 +50,7 @@ const isLegal = (start, end) => {
 */
 
 const checkForWin = () => {
-  if ( stacks.c === [3, 2, 1]){
+  if (document.getElementById('tower-2') === [3, 2, 1]){
     print = "Finished!";
     return true;
   }
