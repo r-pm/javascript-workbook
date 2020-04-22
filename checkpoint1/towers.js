@@ -10,7 +10,8 @@ window.onload = (event) => {
 
   function assignStart(element) {
       //on single click, any #tower triggers the event assignStart 
-    start = element[this].addEventListener('click' , assignStart) ; 
+    start = document.getElementById(this)
+    element[this].addEventListener('click' , assignStart) ; 
     startLength = start.length;
     
   };

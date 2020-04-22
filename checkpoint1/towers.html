@@ -12,13 +12,15 @@
       To Win: You must place all pieces in the same order (largest at the bottom) on the rightmost tower.
     </div>
     <div class="text" id="invalid">Invalid move!</div>
-    <ul class="tower" id="0">
+    <!-- im worried adding a wrap will make appendChild difficult -->
+    <div id="tower-container">
+      <ul class="tower" id="0">
         <li class="disk" id="disk-3"></li>
         <li class="disk" id="disk-2"></li>
         <li class="disk" id="disk-1"></li>
-    </ul>
-    <ul class="tower" id="1"></ul>
-    <ul class="tower" id="2"></ul>
+      </ul>
+      <ul class="tower" id="1"></ul>
+      <ul class="tower" id="2"></ul>
     </div>
     <button class="text" id="restart">Restart</button>
   </div>

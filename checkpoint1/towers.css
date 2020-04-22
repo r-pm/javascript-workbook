@@ -35,7 +35,13 @@ body {
   letter-spacing: 2px;
 }
 
-.towers {
+#tower-container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.tower {
   width: 67vw;
   height: 200px;
   display: flex;
@@ -44,11 +50,11 @@ body {
   padding: 20px;
   margin: 20px auto;
 }
-.towers {
+.tower {
   box-sizing: content-box;
   position: relative;
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction:column-reverse;
   align-items: center;
   width: 150px;
   height: 100%;
@@ -60,7 +66,7 @@ body {
   list-style: none;
   transition: opacity .1s ease-in-out;
 }
-.towers ul:before {
+.tower:before {
   content: '';
   background-color: saddlebrown;
   position: absolute;
@@ -71,7 +77,7 @@ body {
   border-top-left-radius: 10px;
   z-index: 9;
 }
-.towers ul.clickable {
+.tower.clickable {
   cursor: pointer;
 }
 .disk {
