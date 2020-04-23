@@ -19,27 +19,30 @@ function printStacks() {
   console.log("c: " + stacks.c);
 }
 
-function movePiece(startStack,endStack) {
- let disc = startStack.pop(); 
- endStack.push(disc);
+function movePiece(start,end) {
+  // console.log(start)
+  // console.log(end)
+  let disc = start.pop(); 
+  // console.log(disc)
+  end.push(disc);
+ 
 }
 
 
-function isLegal(startStack, endStack) {
-  let startDisc = startStack[startStack.length-1];
-  let endDisc = endStack[endStack.length-1];
-
-  if(startDisc == 0){
-    false
-    console.log('oops that tower is empty')  
-  }else if(startDisc < endDisc){
-    true;
-  }else if(endStack == 0){
-    true;
+function isLegal(start,end) {
+  let startDisc = start[start.length-1];
+  let endDisc = end[end.length-1];
+  // console.log(startDisc,endDisc)
+  if(start === []){
+    return false;
+  }else if((startDisc < endDisc) ||(end === [])){
+    return true;
   }else{ 
-    false;
-    console.log('invalid, did nothing')  
+    console.log('invalid, did nothing') 
+    return false;
+
   }
+  
 }
 
 function checkForWin() {
@@ -65,12 +68,11 @@ function checkForWin() {
 function towersOfHanoi(startStack, endStack) {
   let start = stacks[startStack];
   let end = stacks[endStack];
-  if(isLegal == true){
-    movePiece();
+  if(isLegal(start,end)){
+    movePiece(start,end);
     checkForWin();
   }else{
-    console.log('oops! invalid move')
-    getPrompt();
+    // console.log('oops! invalid move')
   }
 }
 
