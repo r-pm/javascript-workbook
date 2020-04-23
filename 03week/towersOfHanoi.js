@@ -13,11 +13,6 @@ let stacks = {
   c: []
 };
 
-let startStack = stacks.a;
-let endStack = stacks.c;
-let startDisc = startStack[startStack.length-1];
-let endDisc = endStack[endStack.length-1];
-
 function printStacks() {
   console.log("a: " + stacks.a);
   console.log("b: " + stacks.b);
@@ -25,21 +20,29 @@ function printStacks() {
 }
 
 function movePiece(startStack,endStack) {
- endStack.push(startDisc);
- startStack.pop()
+ let disc = startStack.pop(); 
+ endStack.push(disc);
 }
 
 
-function isLegal(startStack,endStack) {
-  if(startDisc < endDisc){
+function isLegal(startStack, endStack) {
+  let startDisc = startStack[startStack.length-1];
+  let endDisc = endStack[endStack.length-1];
+
+  if(startDisc == 0){
+    false
+    console.log('oops that tower is empty')  
+  }else if(startDisc < endDisc){
     true;
-  } else{ 
+  }else if(endStack == 0){
+    true;
+  }else{ 
     false;
     console.log('invalid, did nothing')  
   }
 }
 
-function checkForWin(startStack,endStack) {
+function checkForWin() {
   if (stacks = {
     a: [],
     b: [4, 3, 2, 1],
@@ -60,6 +63,8 @@ function checkForWin(startStack,endStack) {
 }
 
 function towersOfHanoi(startStack, endStack) {
+  let start = stacks[startStack];
+  let end = stacks[endStack];
   if(isLegal == true){
     movePiece();
     checkForWin();
