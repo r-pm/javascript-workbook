@@ -29,13 +29,15 @@ function movePiece(start,end) {
 }
 
 
-function isLegal(start,end) {
+function isLegal(startStack,endStack) {
+  let start = stacks[startStack];
+  let end = stacks[endStack];
   let startDisc = start[start.length-1];
   let endDisc = end[end.length-1];
   // console.log(startDisc,endDisc)
-  if(start === []){
+  if(start.length == 0 ){
     return false;
-  }else if((startDisc < endDisc) ||(end === [])){
+  }else if((startDisc < endDisc) ||(end.length == 0)){
     return true;
   }else{ 
     console.log('invalid, did nothing') 
