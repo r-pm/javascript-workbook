@@ -11,11 +11,15 @@ let board = [];
 let solution = '';
 let letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
 
+
+
+
 function printBoard() {
   for (let i = 0; i < board.length; i++) {
     console.log(board[i]);
   }
 }
+// console.log(printBoard);
 
 function generateSolution() {
   for (let i = 0; i < 4; i++) {
@@ -32,9 +36,24 @@ function generateHint() {
   // your code here
 }
 
-function mastermind(guess) {
-  solution = 'abcd'; // Comment this out to generate a random solution
-  // your code here
+function mastermind(guess, solution) {
+  const solution = 'abcd'; // Comment this out to generate a random solution
+  let count = 0 
+  console.log('comparing solution:', solution, 'and guess:', guess)
+
+  solution.forEach(function(guess, i){
+    if(solution[i] == guess[i]){
+      count ++; //add upp the # correct guess
+                  //check for win
+      return hint; //return hint w/ count 
+
+    }else{
+      return "none of your guesses are correct"
+      //you have 10 guesses 
+      //guess counter?
+    }
+  })
+
 }
 
 
