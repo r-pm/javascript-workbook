@@ -9,9 +9,26 @@ const rl = readline.createInterface({
 
 
 const pigLatin = (word)  => {
+  word = word.toLowerCase().trim();
+  const vowel = ["a", "e", "i", "o", "u"];
+  let vowelIndex = 0;
 
-  // Your code here
-
+  if (vowel.includes(word[0])) {
+    // If first letter is a vowel
+    return word + "yay";
+  } 
+  else {
+    for (let char of word) {
+      // Loop through until the first vowel is found
+      if (vowel.includes(char)) {
+        // Store the index at which the first vowel exists
+        vowelIndex = word.indexOf(char);
+        break;
+      }
+    }
+    // Compose final string
+    return word.slice(vowelIndex) + word.slice(0, vowelIndex) + "ay";
+  }
 }
 
 
