@@ -38,35 +38,29 @@ function generateHint() {
 
 }
 
-//let guess = ?
+
 function mastermind(solution, guess) {
   const solution = 'abcd'; 
+  let guess = 'abab'
   let countExact = 0 
   let countLetter = 0 
 
   guess.forEach((solution, i) => { //check for exact match, letter and index
-    ///pass in solution or guess to funct?
     if(guess[i] == solution[i]){ 
-      countExact ++; //add to count 
+      countExact ++; //add to count
+      solution[i] = 'null'; 
     }
-
   })
  
-  for ([initialization]; [condition]; [final-expression])
-   statement
-  for() 
-  for (guess[i]= 0, i < guess.length; i++) {//check for letter only match
-    someFn(arr[i]);
-  }
-  guess.forEach((solution, j) => { 
-    solution.forEach((guess, i) => {
+  for (i= 0; i < guess.length; i++) {//check for letter only match
+    for (j= 0; j < solution.length; j++) {//check for letter only match
       if(guess == solution){
         countLetter++;
-        solution[i] = '';
-      }
-    })
-
-  
+        solution[j] = 'null';
+      };
+    };
+  }
+ 
   else{
     return "none of your guesses are correct"
     //you have 10 guesses 
