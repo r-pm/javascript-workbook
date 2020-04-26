@@ -8,9 +8,8 @@ const rl = readline.createInterface({
 });
 
 let board = [];
-let solution = '';
+let solution ='';
 let letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
-
 
 function printBoard() {
   for (let i = 0; i < board.length; i++) {
@@ -29,52 +28,50 @@ function getRandomInt(min, max) { //creates rando interger to use in generate so
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
-function generateHint() {
-//letter correct, space correct count
-//letter correct count
-// 'you have' + countExact + 'exact guesses'
-// 'you have' + countLetter + 'letter guesses'
-//wants them returned 1-1
+let countExact = 0; 
+let countLetter = 0; 
 
-}
-
-
-function mastermind(solution, guess) {
-  const solution = 'abcd'; 
-  let guess = 'abab'
-  let countExact = 0 
-  let countLetter = 0 
-
-  guess.forEach((solution, i) => { //check for exact match, letter and index
-    if(guess[i] == solution[i]){ 
-      countExact ++; //add to count
-      solution[i] = 'null'; 
-    }
-  })
- 
-  for (i= 0; i < guess.length; i++) {//check for letter only match
-    for (j= 0; j < solution.length; j++) {//check for letter only match
-      if(guess == solution){
-        countLetter++;
-        solution[j] = 'null';
+function generateHint(guess) {
+  // could i have used: for (let i of guess){} ? //
+  for (let i= 0; i<= guess.length; i++) {//check for letter only match
+    for (let j= 0; j< 4; j++) {//for each [i] of guess, compare every [j] of solution  
+      if(guess[i] == solution[i]){ //for each [i]guess, compare [i]solution
+        countExact ++;  //add to count 
+        solution[i] = 'null';//change that particular solution[i] to an string imposs to match so it wont be double counted
+        // board.push(solution[i])
+        // solution.pop(solution[i]); 
+        // console.log(countExact);
+        // console.log(board);
+      }
+      else if(guess[i] == solution[j]){
+        countLetter++;  //add to count
+        solution[j] = 'null'; //remove so it wont be double counted if there is another letter match
+        // board.push(solution[j]); <- the test seems to use board.length for hints?
+        // console.log(board);
       };
     };
-  }
- 
-  else{
-    return "none of your guesses are correct"
-    //you have 10 guesses 
-    //guess counter?
-  }
-  hint(); //return hint w/ count 
+  };
+  console.log('exact & letter:', countExact , countLetter);
+//wants them returned '1-1'
 }
 
+
+function mastermind(guess) { 
+  solution = 'abcd'; // Comment this out to generate a random solution
+  // console.log(solution);
+  if(guess === solution){
+    console.log('You guessed it!');
+  }else{
+    generateHint(guess);
+  }
+
+}
 
 
 function getPrompt() {
+  printBoard();
   rl.question('guess: ', (guess) => {
     mastermind(guess);
-    printBoard();
     getPrompt();
   });
 }
