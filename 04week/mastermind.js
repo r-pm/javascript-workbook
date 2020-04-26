@@ -12,49 +12,69 @@ let solution = '';
 let letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
 
 
-
-
 function printBoard() {
   for (let i = 0; i < board.length; i++) {
     console.log(board[i]);
   }
 }
-// console.log(printBoard);
 
-function generateSolution() {
+function generateSolution() { //creates the randomized solution 
   for (let i = 0; i < 4; i++) {
     const randomIndex = getRandomInt(0, letters.length);
     solution += letters[randomIndex];
   }
 }
 
-function getRandomInt(min, max) {
+function getRandomInt(min, max) { //creates rando interger to use in generate soln?
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
 function generateHint() {
-  // your code here
+//letter correct, space correct count
+//letter correct count
+// 'you have' + countExact + 'exact guesses'
+// 'you have' + countLetter + 'letter guesses'
+//wants them returned 1-1
+
 }
 
-function mastermind(guess, solution) {
-  const solution = 'abcd'; // Comment this out to generate a random solution
-  let count = 0 
-  console.log('comparing solution:', solution, 'and guess:', guess)
+//let guess = ?
+function mastermind(solution, guess) {
+  const solution = 'abcd'; 
+  let countExact = 0 
+  let countLetter = 0 
 
-  solution.forEach(function(guess, i){
-    if(solution[i] == guess[i]){
-      count ++; //add upp the # correct guess
-                  //check for win
-      return hint; //return hint w/ count 
-
-    }else{
-      return "none of your guesses are correct"
-      //you have 10 guesses 
-      //guess counter?
+  guess.forEach((solution, i) => { //check for exact match, letter and index
+    ///pass in solution or guess to funct?
+    if(guess[i] == solution[i]){ 
+      countExact ++; //add to count 
     }
-  })
 
+  })
+ 
+  for ([initialization]; [condition]; [final-expression])
+   statement
+  for() 
+  for (guess[i]= 0, i < guess.length; i++) {//check for letter only match
+    someFn(arr[i]);
+  }
+  guess.forEach((solution, j) => { 
+    solution.forEach((guess, i) => {
+      if(guess == solution){
+        countLetter++;
+        solution[i] = '';
+      }
+    })
+
+  
+  else{
+    return "none of your guesses are correct"
+    //you have 10 guesses 
+    //guess counter?
+  }
+  hint(); //return hint w/ count 
 }
+
 
 
 function getPrompt() {
