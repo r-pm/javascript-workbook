@@ -11,36 +11,41 @@ let jobTypes = {
 
 //create crewmember class 
 class CrewMember {
-  constructor(,){
-    name = this.name;
-    job = this.job; //(jobTypes)
-    specialSkill = this.skill;
-    Ship = null;
+  constructor(name, job, specialSkill){
+    this.name = name;
+    this.job = job ; //(jobTypes)
+    this.specialSkill = specialSkill;
+    this.ship = null;
   } 
   
   enterShip(anyShip){
-    add this.CrewMember 
+    // add this.CrewMember 
     //add entire variable ship & crew
+    this.ship = anyShip;
+    anyShip.crew.push(this);
+    console.log(anyShip)
+
   }
 
 }
 
 class Ship {
-  constructor(){
-    name = this.name;
-    type = this.type;//(jobTypes)
-    ability = this.ability; 
-    CrewMember = [];
+  constructor(name, type, ability){
+    this.name = name;
+    this.type = type;//(jobTypes)
+    this.ability = ability; 
+    this.crew = [];
   }
   
-  //this method returns ship's ability IF 
-  //CrewMember.job matches Ship's type
-  missionStatement(CrewMember, Ship){
-    if(CrewMember.job fits ship type){
-      print Ship.ability;
-    }else{
-      print "Can't perform a mission yet.";
+  // this method returns ship's ability IF 
+  missionStatement(){
+    for(let i = 0; i < this.crew.length; i++){
+      console.log(jobTypes[this.crew[i].job])
+      if(this.crew.length > 0 && jobTypes[this.crew[i].job] == this.type){
+      return this.ability;
+      }
     }
+    return "Can't perform a mission yet.";
   }
 }
 
