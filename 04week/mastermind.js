@@ -8,7 +8,7 @@ const rl = readline.createInterface({
 });
 
 let board = [];
-let solution ='';
+let solution =['abcd'];
 let letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
 
 function printBoard() {
@@ -17,47 +17,42 @@ function printBoard() {
   }
 }
 
-function generateSolution() { //creates the randomized solution 
-  for (let i = 0; i < 4; i++) {
-    const randomIndex = getRandomInt(0, letters.length);
-    solution += letters[randomIndex];
-  }
-}
+// function generateSolution() { //creates the randomized solution 
+//   for (let i = 0; i < 4; i++) {
+//     const randomIndex = getRandomInt(0, letters.length);
+//     solution += letters[randomIndex];
+//   }
+// }
 
-function getRandomInt(min, max) { //creates rando interger to use in generate soln?
-  return Math.floor(Math.random() * (max - min)) + min;
-}
+// function getRandomInt(min, max) { //creates rando interger to use in generate soln?
+//   return Math.floor(Math.random() * (max - min)) + min;
+// }
 
-let countExact = 0; 
-let countLetter = 0; 
 
 function generateHint(guess) {
+  let countExact = 0; 
+  let countLetter = 0; 
   // could i have used: for (let i of guess){} ? //
-  for (let i= 0; i<= guess.length; i++) {//check for letter only match
-    for (let j= 0; j< 4; j++) {//for each [i] of guess, compare every [j] of solution  
-      if(guess[i] == solution[i]){ //for each [i]guess, compare [i]solution
+  for (let i= 0; i<= guess.length; i++) {
+    for (let j= 0; j< 4; j++) {//for each [i] of array, compare every [j] of array  
+      if(guess[i] == solution[i]){ //for exact match
         countExact ++;  //add to count 
-        solution[i] = 'null';//change that particular solution[i] to an string imposs to match so it wont be double counted
-        // board.push(solution[i])
-        // solution.pop(solution[i]); 
-        // console.log(countExact);
-        // console.log(board);
-      }
-      else if(guess[i] == solution[j]){
+        solution[i] = 'null';//take it off soln [] so it won't be double counted
+        //add to board [] <- has all the exact matches    //<- the test seems to use board.length for hints?
+
+        
+      }else if(guess[i] == solution[j]){//for letter only match
         countLetter++;  //add to count
-        solution[j] = 'null'; //remove so it wont be double counted if there is another letter match
-        // board.push(solution[j]); <- the test seems to use board.length for hints?
-        // console.log(board);
+        solution[j] = 'null';//take off solution 
+        // board.push(solution[j]);//add to board [] <- now has all the exact & letter only matches, including doubles, in order:exact,letter
       };
+      return `${countExact} - ${countLetter}`;
     };
   };
-  console.log('exact & letter:', countExact , countLetter);
-//wants them returned '1-1'
 }
 
 
 function mastermind(guess) { 
-  solution = 'abcd'; // Comment this out to generate a random solution
   // console.log(solution);
   if(guess === solution){
     console.log('You guessed it!');
@@ -102,6 +97,6 @@ if (typeof describe === 'function') {
 
 } else {
 
-  generateSolution();
+  // generateSolution();
   getPrompt();
 }
