@@ -53,6 +53,16 @@ arrayOfPersons = [
     gender: "female"
   },
 ]
-// Use .map() to map over the arrayOfPersons and console.log() their information.
-// Use .filter() to filter the persons array and console.log only males in the array.
-// Use .filter() to filter the persons array and console.log only people that were born before Jan 1, 1990.
+
+  // Use .map() to map over the arrayOfPersons and console.log() their information.
+let info = arrayOfPersons.map(arrayOfPersons);
+console.log(info);
+
+  // Use .filter() to filter the persons array and console.log only males in the array.
+const males = arrayOfPersons.filter(arrayOfPersons.gender !="female");
+console.log(males);
+
+  // Use .filter() to filter the persons array and console.log only people that were born before Jan 1, 1990.
+const thirty = arrayOfPersons.filter(arrayOfPersons.birthDate < "Jan 1, 1990");
+console.log(thirty);
+  
