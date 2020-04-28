@@ -9,7 +9,41 @@ let jobTypes = {
   programmer: 'Any Ship!'
 };
 
-// Your code here
+//create crewmember class 
+class CrewMember {
+  constructor(,){
+    name = this.name;
+    job = this.job; //(jobTypes)
+    specialSkill = this.skill;
+    Ship = null;
+  } 
+  
+  enterShip(anyShip){
+    add this.CrewMember 
+    //add entire variable ship & crew
+  }
+
+}
+
+class Ship {
+  constructor(){
+    name = this.name;
+    type = this.type;//(jobTypes)
+    ability = this.ability; 
+    CrewMember = [];
+  }
+  
+  //this method returns ship's ability IF 
+  //CrewMember.job matches Ship's type
+  missionStatement(CrewMember, Ship){
+    if(CrewMember.job fits ship type){
+      print Ship.ability;
+    }else{
+      print "Can't perform a mission yet.";
+    }
+  }
+}
+
 
 //tests
 if (typeof describe === 'function'){
