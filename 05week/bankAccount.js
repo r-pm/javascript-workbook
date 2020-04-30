@@ -33,7 +33,7 @@ class BankAccount {
     if ((this.balance - amount) > 0){//You should not be able to charge an amount that would make you balance dip below 0
       let transaction = new Transaction(amount , payee);//creates a new transaction with the payee and amount 
       this.transactions.push(transaction);//and add it to the transactions array.
-    }else{
+    }else if(amount < 0){
       return 'refund';
     }
 
@@ -80,9 +80,22 @@ class Transaction{
 
 
 //Tests
+if (typeof describe === 'function'){
+  describe('BankAccount', function(){
+    it('should create a new account with all methods working', function(){//describe
+      let acct1 = new BankAccount("5553429", "John Doe");//example passing in 
+      assert.equal(acct1.accountNumber, '5553429');//keep assert.equal(what im feeding, 'what it expects')
+      assert.equal(acct1.owner, 'John Doe');//should return name of owner as provided above
+      assert.equal(acct1.balance(), 0);//at start, a balance of 0
+      assert.equal(acct1.deposit(100), 100);//should receive deposit & update balance
+      assert.equal(acct1.deposit(-200), ?);//should not be allowed
+      assert.equal(acct1.charge("Targé", -20), 'refund');
 
-should create a new account 
-// 
+
+
+    });
+  });
+}
 
 
 ///testing deposit()
@@ -103,21 +116,7 @@ should create a new account
 // acct1.charge("Targe", -20) //refund
 // console.log(acct1.balance())  //74.35
 
-if (typeof describe === 'function'){
-  describe('BankAccount', function(){
-    it('should create a new account', function(){//describe
-      let acct1 = new BankAccount("5553429", "John Doe");//example passing in 
-      assert.equal(acct1.accountNumber, '5553429');//keep assert.equal(what im feeding, 'what it expects')
-      assert.equal(acct1.owner, 'John Doe');
-      assert.equal(acct1.balance(), 0);
-      assert.equal(acct1.deposit(), 0);
-      assert.equal(acct1.charge("Targé", -20), 'refund');
 
-
-
-    });
-  });
-}
 
 
 
