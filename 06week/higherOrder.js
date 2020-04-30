@@ -101,3 +101,4 @@ if (typeof describe === 'function') {
   console.log('Only run the tests on this one!')
 
 }
+I mapped II filter III reduce
