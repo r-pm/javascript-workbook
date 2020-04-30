@@ -6,25 +6,37 @@ class BankAccount {
     this.accountNumber = accountNumber;//String representing the account number 
     this.owner = owner;//String representing the owner of the account
     this.transactions = []; //an array of transactions representing the history of all transactions associated with this account
-
+                            //the array will contain entire transaction objects 
   }
 
   balance(){
-    //adds up all transactions[]items
-    //returns the current balance on the account
+    if(this.transactions.length > 0){
+      let balanceAmount = this.transactions.reduce((accumulator, currentValue) => {//reduce() works w literal accumulator & currentValue params, replaced by initial value & next array item
+        return accumulator + currentValue.amount;//will add AMOUNT of ea array item to initial value, 0
+        //adds up all transactions[]items using reduce()
+        //returns the current balance on the account
+      }, 0);
+    }else{
+      return 0;
+    }
 
   }
 
   deposit(amount){
-    if >0//You should not be able to deposit a negative amount
-    //create a new deposit transaction 
-    .push//and add it to the transactions array.
+    if (amount > 0){//You should not be able to deposit a negative amount
+      let transaction = new Transaction(amount , payee);//creates a new transaction with the payee and amount 
+      this.transactions.push(transaction);//and add it to the transactions array.
+    }
   }
 
   charge(payee, amount){
-    if this.balance<0//You should not be able to charge an amount that would make you balance dip below 0
-    //creates a new transaction with the payee and amount 
-    .push//adds the transaction to the transaction array
+    if ((this.balance - amount) > 0){//You should not be able to charge an amount that would make you balance dip below 0
+      let transaction = new Transaction(amount , payee);//creates a new transaction with the payee and amount 
+      this.transactions.push(transaction);//and add it to the transactions array.
+    }else{
+      return 'refund';
+    }
+
   }
 
 } 
@@ -45,7 +57,6 @@ class Transaction{
     this.date = current date;//automatic current date of the transaction
     this.amount = amount;//amount of the transaction. Positive amounts are money going into the account (deposit, refund). Negative amounts are money coming out of the account (a charge, or debit)
     this.payee = payee;//description or payee on the transaction 
-
 
   }
 
@@ -70,18 +81,18 @@ class Transaction{
 
 //Tests
 
-// let acct1 = new BankAccount("5553429", "John Doe");
+should create a new account 
+// 
 
-// console.log(acct1.accountNumber);  // 5553429
-// console.log(acct1.owner); // John Doe
-// console.log(acct1.balance()): // 0
 
+///testing deposit()
 // acct1.deposit(100)
 // console.log(acct1.balance()): // 100
 
 // acct1.deposit(-200)  // should not be allowed
 // console.log(acct1.balance()): // 100
 
+///testing charge()
 // acct1.charge("Target", 30.50)
 // acct1.charge("FreeBirds", 15.15)
 // console.log(acct1.balance())  //54.35
@@ -92,6 +103,21 @@ class Transaction{
 // acct1.charge("Targe", -20) //refund
 // console.log(acct1.balance())  //74.35
 
+if (typeof describe === 'function'){
+  describe('BankAccount', function(){
+    it('should create a new account', function(){//describe
+      let acct1 = new BankAccount("5553429", "John Doe");//example passing in 
+      assert.equal(acct1.accountNumber, '5553429');//keep assert.equal(what im feeding, 'what it expects')
+      assert.equal(acct1.owner, 'John Doe');
+      assert.equal(acct1.balance(), 0);
+      assert.equal(acct1.deposit(), 0);
+      assert.equal(acct1.charge("Targé", -20), 'refund');
+
+
+
+    });
+  });
+}
 
 
 
