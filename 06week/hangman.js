@@ -3,6 +3,8 @@
 let solution = ["D", "O", "G"];
 
 let guessArray = [];
+document.getElementById('show-guessArray').innerHTML = guessArray;
+
 
 let guess = 'D'
 // document.getElementById('guess');
