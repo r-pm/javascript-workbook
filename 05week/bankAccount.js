@@ -1,3 +1,6 @@
+'use strict';
+
+let assert = require('assert');
 // For this assignment we are creating 2 classes that can be used to represent a Bank Account and the transactions it holds.
 
 class BankAccount {
@@ -24,7 +27,7 @@ class BankAccount {
 
   deposit(amount){
     if (amount > 0){//You should not be able to deposit a negative amount
-      let transaction = new Transaction(amount , payee);//creates a new transaction with the payee and amount 
+      let transaction = new Transaction(amount,payee);//creates a new transaction with the payee and amount 
       this.transactions.push(transaction);//and add it to the transactions array.
     }
   }
@@ -54,7 +57,12 @@ class BankAccount {
 
 class Transaction{
   constructor(amount, payee){
-    this.date = current date;//automatic current date of the transaction
+    this.today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+    today = mm + '/' + dd + '/' + yyyy;
+    console.log(this.today)
     this.amount = amount;//amount of the transaction. Positive amounts are money going into the account (deposit, refund). Negative amounts are money coming out of the account (a charge, or debit)
     this.payee = payee;//description or payee on the transaction 
 
@@ -88,7 +96,7 @@ if (typeof describe === 'function'){
       assert.equal(acct1.owner, 'John Doe');//should return name of owner as provided above
       assert.equal(acct1.balance(), 0);//at start, a balance of 0
       assert.equal(acct1.deposit(100), 100);//should receive deposit & update balance
-      assert.equal(acct1.deposit(-200), ?);//should not be allowed
+      // assert.equal(acct1.deposit(-200), ?);//should not be allowed
       assert.equal(acct1.charge("Targé", -20), 'refund');
 
 
