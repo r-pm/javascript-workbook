@@ -57,14 +57,9 @@ class BankAccount {
 
 class Transaction{
   constructor(amount, payee){
-    this.today = new Date();
-    var dd = String(today.getDate()).padStart(2, '0');
-    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-    var yyyy = today.getFullYear();
-    today = mm + '/' + dd + '/' + yyyy;
-    console.log(this.today)
     this.amount = amount;//amount of the transaction. Positive amounts are money going into the account (deposit, refund). Negative amounts are money coming out of the account (a charge, or debit)
     this.payee = payee;//description or payee on the transaction 
+    this.today = new Date(); /// does this need to be passed as param?
 
   }
 
@@ -94,18 +89,31 @@ if (typeof describe === 'function'){
       let acct1 = new BankAccount("5553429", "John Doe");//example passing in 
       assert.equal(acct1.accountNumber, '5553429');//keep assert.equal(what im feeding, 'what it expects')
       assert.equal(acct1.owner, 'John Doe');//should return name of owner as provided above
-      assert.equal(acct1.balance(), 0);//at start, a balance of 0
-      assert.equal(acct1.deposit(100), 100);//should receive deposit & update balance
-      // assert.equal(acct1.deposit(-200), ?);//should not be allowed
-      assert.equal(acct1.charge("Targé", -20), 'refund');
-
-
-
     });
   });
+  describe('BankAccount', function(){
+    it('should check that balance starts at zero', function(){//describe
+      let acct1 = new BankAccount("5553429", "John Doe");//example passing in 
+      assert.equal(acct1.balance(), 0);//at start, a balance of 0
+    });
+  });
+  describe('BankAccount', function(){
+    it('should receive deposit & update balance', function(){//describe
+      let acct1 = new BankAccount("5553429", "John Doe");//example passing in 
+      assert.equal(acct1.deposit(100), 100);
+    });
+  });
+  describe('BankAccount', function(){
+    it('should display refund for credits to charge', function(){//describe
+      let acct1 = new BankAccount("5553429", "John Doe");//example passing in 
+      assert.equal(acct1.charge("Targé", -20), 'refund');
+    });
+  });
+
 }
 
-
+// assert.equal(acct1.charge("Targé", -20), 'refund');
+// acct1.charge("Diamond Shop", 1000) // should not be allowed
 ///testing deposit()
 // acct1.deposit(100)
 // console.log(acct1.balance()): // 100
@@ -118,7 +126,6 @@ if (typeof describe === 'function'){
 // acct1.charge("FreeBirds", 15.15)
 // console.log(acct1.balance())  //54.35
 
-// acct1.charge("Diamond Shop", 1000) // should not be allowed
 // console.log(acct1.balance())  //54.35
 
 // acct1.charge("Targe", -20) //refund
