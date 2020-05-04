@@ -15,9 +15,10 @@ class BankAccount {
   balance(){
     if(this.transactions.length > 0){
       let balanceAmount = this.transactions.reduce((accumulator, currentValue) => {//reduce() works w literal accumulator & currentValue params, replaced by initial value & next array item
-        return accumulator + currentValue.amount;//will add AMOUNT of ea array item to initial value, 0
+        let balanceTotal = accumulator + currentValue.amount;//will add AMOUNT of ea array item to initial value, 0
         //adds up all transactions[]items using reduce()
         //returns the current balance on the account
+        console.log(balanceTotal);
       }, 0);
     }else{
       return 0;
@@ -29,6 +30,7 @@ class BankAccount {
     if (amount > 0){//You should not be able to deposit a negative amount
       let transaction = new Transaction(amount);//creates a new transaction with the payee and amount 
       this.transactions.push(transaction);//and add it to the transactions array.
+      console.log(this.deposit);
     }
   }
 
@@ -100,7 +102,9 @@ if (typeof describe === 'function'){
   describe('BankAccount', function(){
     it('should receive deposit & update balance', function(){//describe
       let acct1 = new BankAccount("5553429", "John Doe");//example passing in 
-      assert.equal(acct1.deposit(100), 100);
+      assert.equal(acct1.deposit(100), );
+      assert.equal(acct1.balance(), 100);//after deposit, balance should be 100
+
     });
   });
   describe('BankAccount', function(){
