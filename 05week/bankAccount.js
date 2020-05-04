@@ -27,7 +27,7 @@ class BankAccount {
 
   deposit(amount){
     if (amount > 0){//You should not be able to deposit a negative amount
-      let transaction = new Transaction(amount,payee);//creates a new transaction with the payee and amount 
+      let transaction = new Transaction(amount);//creates a new transaction with the payee and amount 
       this.transactions.push(transaction);//and add it to the transactions array.
     }
   }
