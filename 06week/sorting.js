@@ -10,19 +10,19 @@ let numsOnly = strNums.map((strNums) => {
 })
 console.log(numsOnly);
 
-// let new_array = arr.map(function callback( currentValue[, index[, array]]) {
-//   // return element for new_array
-// }[, thisArg])
-// const map1 = array1.map(x => x * 2);
-
 ///2/// With the same numbers, find the sum of the even values
-let sumEvens = numsOnly.filter(function(){})
-console.log(sumEvens);
-//.filter() to create evens only array
-sumEvens.reduce() 
-//map()? reduce? sum up array 
+let findEvens = numsOnly.filter((numsOnly) => {
 
-///3/// Find the index of the first value when added to it's index = 512 (#ATX!!)
+});
+console.log(findEvens);
+//.filter() to create evens only array
+let sumEvens = findEvens.reduce((findEvens) => {
+
+},0); 
+//.reduce() to sum up array 
+console.log(sumEvens);
+
+///3/// Find the index of the final value that adds up to 512 in array
 const atxIdx;
 //add up all values until sum 512
 //reduce() 
@@ -124,7 +124,10 @@ return
 
 
 
-
+// let new_array = arr.map(function callback( currentValue[, index[, array]]) {
+//   // return element for new_array
+// }[, thisArg])
+// const map1 = array1.map(x => x * 2);
 
 
 
