@@ -7,7 +7,7 @@ const strNums = ["1","4","1","5","9","2","6","5","3","5","8","9","7","9","3","2"
 let numsOnly = strNums.map((strNums) => {
   return Number(strNums);
 })
-console.log(numsOnly);
+console.log('array of numbers: ', numsOnly);
 
 
 
@@ -23,26 +23,20 @@ let sumEvens = findEvens.reduce((accumulator, currentValue) => {
  return accumulator + currentValue; 
 },0); 
 //.reduce() to sum up array 
-console.log(sumEvens);
+console.log('sum of even numbers: ', sumEvens);
 
 
 
 ///3/// 
-//add up all values until sum = 512
-let sumValues = numsOnly.reduce((accumulator, currentValue) => {
-  if(accumulator + currentValue <= 512){
-    return numsOnly[i]
-  };
-},0);
-
-let sumValues =0;
-for(i=0; i<= numsOnly.length; i++){
-  if(sumValues < 512){
-    sumValues + i;
-  }else if(sumValues = 512){
-    return i;
+//add up all values until sum = 512, return 
+let sumVal = 0;
+let found = findIndex(num => {
+  sumVal += num;
+  if(sumVal == 512){
+    return true
   }
-};
+});
+console.log('512 is reached at [i]: ', found);
 
 
 const weather = [
@@ -110,17 +104,16 @@ const weather = [
     visibility: 11.14056410562316,
     predictability: 71
   },
-],
+];
 
 ///4/// create an array of the unique 'weather_state_name' values of the weather array.
     /// Your function should return the following array ['Light Cloud', 'Heavy Cloud', 'Showers']
-const unique = weather.map(function(weather){
-  // if(count < 2){
-    return weather.weather_state_name
-    // count ++
-  // }
+let unique = weather.filter((value,index) => {
+  weather.weather_state_name.indexOf(value) == index;
+  // using indexOf match the i of the first instance of value & current i of value
+  //if they are the same (there is no duplicate i for the same value), it will be in new array
 });
-
+console.log('array of unique weather states: ', unique);
 
 ///5///find the id of the object in weather that has a min_temp of 15.915
 for(i=0; i<= weather.length; i++){
@@ -128,4 +121,5 @@ for(i=0; i<= weather.length; i++){
     return 'ideal temp: ', weather[i].id;
   };
 }
+///i could not figure out how to use a higher order funct that didnt also use for loop
 
