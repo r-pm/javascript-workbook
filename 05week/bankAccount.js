@@ -47,22 +47,11 @@ class BankAccount {
 
 } 
 
-// 3. The class should have the following 3 methods:
-// 	a. balanace() - this method does not take any input, and returns the current balance on the account. The balance is computed 
-// 	                by summing up the amounts in the transactions array
-// 	b. deposit(amt) - this method takes in a single input, the deposit amount. This method should create a new transaction 
-// 	                  representing the deposit, and add it to the transactions array.
-// 	                - You should not be able to deposit a negative amount                
-// 	c. charge(payee, amt) - this method takes in the payee and amount, creates a new transaction with the payee and amount, and 
-// 	                        adds the transaction to the transaction array
-// 	                      - You should not be able to charge an amount that would make you balance dip below 0
-
-
 class Transaction{
   constructor(amount, payee){
     this.amount = amount;//amount of the transaction. Positive amounts are money going into the account (deposit, refund). Negative amounts are money coming out of the account (a charge, or debit)
     this.payee = payee;//description or payee on the transaction 
-    this.today = new Date(); /// does this need to be passed as param?
+    this.today = new Date();
 
   }
 
