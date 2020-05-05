@@ -27,11 +27,8 @@ const atxIdx;
 //add up all values until sum 512
 //reduce() 
 //return index of last value - indexOf(value)
-
-console.log(`index: ${atxIdx}, value: ${nums[atxIdx]}`);
-function filter(arr, callback) {
-  // Your code here
-}
+///find i at which i + i's value = 512 
+//using for loop or forEach
 
 
 const weather = [
@@ -114,13 +111,9 @@ function some(arr, callback) {
 ///5///find the id of the object in weather that has a min_temp of 15.915
 const idealTemp =
 console.log(idealTemp)
-filter()
-function every(arr, callback) {
-  // Your code here
-}
-//filter(obj key)
-if min temp <=
-return 
+loop
+if ( >= min temp) <=
+return weather[i].id
 
 
 
