@@ -8,18 +8,10 @@ function getInput() {
     .then(response => response.json())
     console.log(response)
     .then(data => console.log(data));
-    
-};
-///   create a new person class 
-///   add to pool of people array
-function addPeople(data){
-  class newPerson {
-    constructor(){
+    ///   add to pool of people array
+    //how do i include only the attributes i need?s
+}; 
 
-    }
-  }
-  people.push(this.newPerson);
-};
 
 ///   display: pool of people with onclick
 ///   include button to approve
