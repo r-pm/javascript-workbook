@@ -1,41 +1,47 @@
 'use strict'
 let people = [];
-let players = [];
-///  input: fetch (random user)
-// window.onload = 
-function getInput() {
-  fetch('http://example.com/https://randomuser.me/api/?results=6')
-    .then(response => response.json())
-    console.log(response)
-    .then(data => console.log(data));
-    ///   add to pool of people array
+
+// window.onload = ?
+function fetchPeople(){ 
+  fetch('http://example.com/https://randomuser.me/api/?results=10')
+  .then(response => response.json())
+  console.log(response)
+  .then(data => {people.push(data)});
     //how do i include only the attributes i need?s
-}; 
+};
 
-
-///   display: pool of people with onclick
-///   include button to approve
-function listPeople(){
-  document.getElementById('people')
-  //appendChild ea people item
-  //appendChild approval button to ea item
+///   onclick display list
+function displayPeople(){
+  let source = document.getElementById('people');
+  source.appendChild()
+  //appendChild ea person + wanted attributes to #people
+  //add approval button to ea appendChild
+  fetchPeople();
 };
 
 ///   on click, pass person to class for newPlayer
 //add event handler to approval button click
-function approvePlayer(){
-  class newPlayer {
-    constructor(){
-
-    }
-    players.push(this.newPlayer);
+class newPlayer {
+  constructor(name, age, sport, position){
+    this.name = name;
+    this.age = age;
+    this.sport = sport;
+    this.position = position;
+    this.team = null;
 
   }
-};
+
+  assignTeam(){
+    if(){
+      this.team = 'Blue'
+    }else {this.team = 'Red'}
+  };
+
+  new Teammate;
+}
 
 ///  display approved players array
 function displayPlayers(){
-  //appendChild players[]
   document.getElementById('players').appendChild 
   //remove from people[]?
   //create team assignment button for each 
@@ -51,3 +57,8 @@ function assignTeam(){
   }* extend player class with team name
   */
 };
+
+class Teammate extends newPlayer {
+  constructor(name, age, sport, position)
+    this.team = blue or red 
+}
