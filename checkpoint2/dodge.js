@@ -1,64 +1,91 @@
 'use strict'
 let people = [];
+let players = [];
 
-// window.onload = ?
-function fetchPeople(){ 
-  fetch('http://example.com/https://randomuser.me/api/?results=10')
+function recruitPeople() {
+  fetch('https://randomuser.me/api/?results=10')
   .then(response => response.json())
-  console.log(response)
-  .then(data => {people.push(data)});
-    //how do i include only the attributes i need?s
+  .then(function(results){
+    people = results.results //whole element added to people array
+    people.forEach(element => { //displayPerson for ea elem in array
+      displayPerson(element); 
+  
+    });
+  })
+}
+
+window.onload = () => { //refresh registrants every onload 
+  recruitPeople();
 };
 
-///   onclick display list
-function displayPeople(){
-  let source = document.getElementById('people');
-  source.appendChild()
-  //appendChild ea person + wanted attributes to #people
-  //add approval button to ea appendChild
-  fetchPeople();
-};
+function displayPerson(person) {
+  const li = document.createElement('li') //<li> that holds this person
+  //img
+  const img = document.createElement('img')
+  img.setAttribute('src', person.picture.thumbnail)
+  li.appendChild(img)
+  //name
+  const name = document.createElement('span')
+  name.innerText = ' ' + person.name.first + ' ' + person.name.last + ' '
+  li.appendChild(name)
+  //age
+  const age = document.createElement('span')
+  age.innerText = ' , ' + person.dob.age +  ' '
+  li.appendChild(age)
+  //select button
+  const select = document.createElement('button') 
+  select.innerText = 'select player'
+  li.appendChild(select)
+  select.addEventListener('click', function (params) {
+    let newPlayer = new Player(name.innerText, age.innerText) 
+    displayPlayer(newPlayer);
+    //display in html by creating new elem 
+    console.log('select clicked', person)
+      //remove li person from html
+      li.remove();
 
-///   on click, pass person to class for newPlayer
-//add event handler to approval button click
-class newPlayer {
-  constructor(name, age, sport, position){
+  })
+  //// does this have to go last?
+  document.getElementById('people').appendChild(li)
+  
+}
+
+class Player {
+  constructor(name, age){
     this.name = name;
     this.age = age;
-    this.sport = sport;
-    this.position = position;
-    this.team = null;
 
   }
-
-  assignTeam(){
-    if(){
-      this.team = 'Blue'
-    }else {this.team = 'Red'}
-  };
-
-  new Teammate;
+  // displayPlayer();
+  
 }
 
-///  display approved players array
-function displayPlayers(){
-  document.getElementById('players').appendChild 
-  //remove from people[]?
-  //create team assignment button for each 
+function displayPlayer(player) {
+  console.log('a player', player)
 
-};
+  //select for blue team & red team
+  //event handlers for ea 
+  //create a new instance of teammate with 'blue'
 
-///  onclick pass person to class Teammate with selected team attribute 
-function assignTeam(){
-  //event handler for team assignment button
-  /*push to team arrays
-    class teammate{
-    team name:
-  }* extend player class with team name
-  */
-};
-
-class Teammate extends newPlayer {
-  constructor(name, age, sport, position)
-    this.team = blue or red 
 }
+
+function displayTeammate(teammate) {
+  //append teammate info to blue ul or red ul
+  //based on team attribute 
+  if(teammate.team == blue){
+    //append to blu ul
+  }else {//append to red
+  }
+
+  
+}
+
+
+class Teammate extends Player {
+  constructor(name, age, team){
+    super(name, age);
+    this.team = team; ///how to connect to event list for select buttons 
+  }
+}
+
+
