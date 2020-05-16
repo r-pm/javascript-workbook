@@ -4,13 +4,20 @@ let players = [];
 
 function recruitPeople() {
   fetch('https://randomuser.me/api/?results=10')
-  .then(response => response.json())
+  .then(function (response) {
+    if(!response.ok){
+      throw Error('server error');
+    }
+    return response.json()
+  })
   .then(function(results){
     people = results.results //whole element added to people array
     people.forEach(element => { //displayPerson for ea elem in array
       displayPerson(element); 
   
-    });
+    })
+  }).catch(function (error) {
+    alert('oops! something went wrong')
   })
 }
 
@@ -134,4 +141,4 @@ function displayTeammate(teammate) {
 
 
 
-
+///TESTING///
