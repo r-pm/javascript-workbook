@@ -20,72 +20,118 @@ window.onload = () => { //refresh registrants every onload
 
 function displayPerson(person) {
   const li = document.createElement('li') //<li> that holds this person
+  document.getElementById('people').appendChild(li)
   //img
   const img = document.createElement('img')
   img.setAttribute('src', person.picture.thumbnail)
   li.appendChild(img)
   //name
   const name = document.createElement('span')
-  name.innerText = ' ' + person.name.first + ' ' + person.name.last + ' '
+  name.innerText = ' ' + person.name.first + ' ' + person.name.last + ' , '
   li.appendChild(name)
   //age
   const age = document.createElement('span')
-  age.innerText = ' , ' + person.dob.age +  ' '
+  age.innerText =  person.dob.age +  ' '
   li.appendChild(age)
   //select button
   const select = document.createElement('button') 
   select.innerText = 'select player'
   li.appendChild(select)
-  select.addEventListener('click', function (params) {
-    let newPlayer = new Player(name.innerText, age.innerText) 
+  select.addEventListener('click', function (params) {    
+    let newPlayer = new Player(name.innerText, person.phone, person.picture.thumbnail) 
+    // console.log('this is newPlayer' , newPlayer)
     displayPlayer(newPlayer);
-    //display in html by creating new elem 
     console.log('select clicked', person)
       //remove li person from html
       li.remove();
 
   })
-  //// does this have to go last?
-  document.getElementById('people').appendChild(li)
   
 }
 
 class Player {
-  constructor(name, age){
+  constructor(name, contact, img){
     this.name = name;
-    this.age = age;
+    this.contact = contact;
+    this.img = img;
 
   }
-  // displayPlayer();
   
 }
 
 function displayPlayer(player) {
-  console.log('a player', player)
+  const li = document.createElement('li') //<li> that holds this player
+  document.getElementById('players').appendChild(li)
+  console.log('display a player', player)
+  ///img
+  const imgPlayer = document.createElement('img')
+  imgPlayer.setAttribute('src', player.img)
+  li.appendChild(imgPlayer)
+  ///name
+  const name = document.createElement('span')
+  name.innerText = player.name 
+  li.appendChild(name)
+  ///contact
+  const contact = document.createElement('span')
+  contact.innerText = player.contact 
+  li.appendChild(contact)
+  ///button red
+  const selectRed = document.createElement('button') 
+  selectRed.innerText = 'red team'
+  li.appendChild(selectRed)
+   //event handlers red 
+   selectRed.addEventListener('click', function () {    
+    let newTeammate = new Teammate(player.name, player.contact, player.img, 'red') 
+    displayTeammate(newTeammate);
+    console.log('selected red', player)
+    li.remove();
 
-  //select for blue team & red team
-  //event handlers for ea 
-  //create a new instance of teammate with 'blue'
+  })
+  ///button blue 
+  const selectBlue = document.createElement('button') 
+  selectBlue.innerText = 'blue team'
+  li.appendChild(selectBlue)
+  //event handlers blue 
+ selectBlue.addEventListener('click', function () {    
+  let newTeammate = new Teammate(player.name, player.contact, player.img, 'blue') 
+  displayTeammate(newTeammate);
+  console.log('selected blue', player)
+  li.remove();
 
-}
-
-function displayTeammate(teammate) {
-  //append teammate info to blue ul or red ul
-  //based on team attribute 
-  if(teammate.team == blue){
-    //append to blu ul
-  }else {//append to red
-  }
-
-  
+})
 }
 
 
 class Teammate extends Player {
-  constructor(name, age, team){
-    super(name, age);
-    this.team = team; ///how to connect to event list for select buttons 
-  }
+  constructor(name, contact, img, team){
+    super(name, contact, img);
+    this.team = team; 
 }
+}
+
+function displayTeammate(teammate) {
+  const li = document.createElement('li') //<li> that holds this teammate 
+  if(teammate.team == 'blue'){
+    document.getElementById('blue').appendChild(li)
+  }else{ 
+    document.getElementById('red').appendChild(li)
+
+  }
+ ///img
+ const img = document.createElement('img')
+ img.setAttribute('src', teammate.img)
+ li.appendChild(img)
+ ///name
+ const name = document.createElement('span')
+ name.innerText = teammate.name 
+ li.appendChild(name)
+ ///contact
+ const contact = document.createElement('span')
+ contact.innerText = teammate.contact 
+ li.appendChild(contact)
+  
+}
+
+
 
 
