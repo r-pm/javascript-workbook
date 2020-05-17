@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Towers of Hanoi!</title>
+  <link rel="stylesheet" href="towers.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="text" id="message">Welcome!<br><br> To play: click once on the piece you want to move, double-click on the tower you want to move it to. <br><br>
+      To Win: You must place all pieces in the same order (largest at the bottom) on the rightmost tower.
+    </div>
+    <div class="text" id="invalid">Invalid move!</div>
+    <!-- im worried adding a wrap will make appendChild difficult -->
+    <div id="tower-container">
+      <ul class="tower" id="tower-0">
+        <li class="disk" id="disk-3"></li>
+        <li class="disk" id="disk-2"></li>
+        <li class="disk" id="disk-1"></li>
+      </ul>
+      <ul class="tower" id="tower-1"></ul>
+      <ul class="tower" id="tower-2"></ul>
+    </div>
+    <button class="text" id="restart">Restart</button>
+  </div>
+</body>
+<script src="towers.js"></script>  
+
+</html>
