@@ -142,3 +142,16 @@ function displayTeammate(teammate) {
 
 
 ///TESTING///
+
+///Although I did not write test code, one thing that became aparrent 
+///just by thinking through the process is that dividing up functional
+///parts of code is helpful visually, but also for organization & 
+///understanding of functionality, and eventually, testing. 
+
+//In order to test:                                     
+// New elements are created & appeneded correctly
+// I would pass in a teammate with team = blue and confirm it is appended to ul id= blue, not id= red  
+
+//Created elements hold the correct parts of results
+//I would search for an email attribute in the people array. There should be none.
+
