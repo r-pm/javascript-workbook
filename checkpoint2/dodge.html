@@ -2,27 +2,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dodgeball Roster</title>
+  <title>Dodgeball Roster!</title>
   <link rel="stylesheet" href="dodge.css">
 </head>
 <body>
-  <div>
+  <div class="container">
+    <div>
       <h4>Pool of People</h4>
       <ul id="people"></ul>
-  </div>
+    </div>
   <button onclick="recruitPeople()">List More People</button>
-  <div>
+  </div>  
+  
+  <div class="container">
       <h4>Approved Players</h4>
       <ul id="players"></ul>
   </div>
-  <div>
+
+  <div class="container" class="teams">
+    <div class="team">
       <h4>Blue Team</h4>
       <ul id="blue"></ul>
-  </div>
-  <div>
+    </div>
+    <div class="team">
       <h4>Red Team</h4>
       <ul id="red"></ul>
+    </div>  
   </div>
+  
 </body>
 <script src="dodge.js"></script>
 </html>
