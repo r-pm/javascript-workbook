@@ -1,0 +1,171 @@
+/* general */
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+/* 
+/* create a stick figure */
+.person {
+  position: relative;
+  margin: 1 auto;
+  width: 150px;
+  height: 350px;
+  text-align: center;
+}
+.person > div {
+  margin: 1 auto;
+  position: absolute;
+}
+.person > div.center {
+  margin: 1 auto;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.person .head {
+  height: 50px;
+  width: 50px;
+  border: solid 1px #000;
+  border-radius: 50%;
+}
+.person .torso {
+  width: 1px;
+  height: 85px;
+  background: #000;
+  top: 51px;
+}
+.person .arm {
+  width: 1px;
+  height: 35px;
+  background: #000;
+  top: 55px;
+}
+.person .arm.left {
+  left: calc(50% - 1px);
+  transform-origin: bottom;
+  transform: rotate(-45deg);
+  animation-name: wave;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+}
+.person .arm.right {
+  left: calc(50% - 1px);
+  transform-origin: bottom;
+  transform: rotate(45deg);
+}
+.person .leg {
+  width: 1px;
+  height: 50px;
+  background: #000;
+  top: 85px;
+}
+.person .leg.left {
+  left: calc(50% - 1px);
+  transform-origin: bottom;
+  transform: rotate(-145deg);
+}
+.person .leg.right {
+  left: calc(50%);
+  transform-origin: bottom;
+  transform: rotate(145deg);
+}
+
+@keyframes wave {
+  0% {
+    transform-origin: bottom;
+    transform: rotate(-45deg);
+  }
+  10% {
+    transform-origin: bottom;
+    transform: rotate(-75deg);
+  }
+  20% {
+    transform-origin: bottom;
+    transform: rotate(-45deg);
+  }
+}
+
+/* .person {
+	position: relative;
+	margin: 0 auto;
+	width: 150px;
+	height: 350px;
+  text-align: center;
+}
+.head-center {
+			left: 50%;
+      transform: translateX(-50%);
+}
+
+.head {
+		height: 50px;
+		width: 50px;
+		border: solid 1px #000;
+    border-radius: 50%;
+}
+
+.torso-center {
+		width: 1px;
+		height: 85px;
+		background: #000;
+		top: 51px;
+}
+
+.arm-left{
+		width: 1px;
+		height: 35px;
+		background: #000;
+		top: 55px;
+			left: calc(50% - 1px);
+			transform-origin: bottom;
+			transform: rotate(-45deg);
+			animation-name: wave;
+			animation-duration: 10s;
+			animation-iteration-count: infinite;
+		}
+.arm-right{
+      width: 1px;
+      height: 35px;
+      background: #000;
+      top: 55px;
+			left: calc(50% - 1px);
+			transform-origin: bottom;
+			transform: rotate(45deg);
+    }
+    
+.leg-left {
+		width: 1px;
+		height: 50px;
+		background: #000;
+		top: 85px;
+			left: calc(50% - 1px);
+			transform-origin: bottom;
+			transform: rotate(-145deg);
+}
+.leg-right {
+  width: 1px;
+  height: 50px;
+  background: #000;
+  top: 85px;
+			left: calc(50%);
+			transform-origin: bottom;
+      transform: rotate(145deg);
+}
+
+@keyframes wave {
+	0% {
+		transform-origin: bottom;
+		transform: rotate(-45deg);
+	}
+	10% {
+			transform-origin: bottom;
+			transform: rotate(-75deg);
+	}
+	20% {
+		transform-origin: bottom;
+		transform: rotate(-45deg);
+	}
+} */
+/* display hide */
+if wrong guess, display on thru js */
